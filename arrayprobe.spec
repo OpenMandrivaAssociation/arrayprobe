@@ -1,7 +1,7 @@
 Summary:	A command line HP (Compaq) SmartArray status checker
 Name:		arrayprobe
 Version:	2.0
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		System/Kernel and hardware
 URL:		http://www.strocamp.net/opensource/
