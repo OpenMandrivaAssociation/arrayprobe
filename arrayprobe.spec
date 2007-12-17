@@ -10,7 +10,6 @@ Patch0:		arrayprobe_2.0-2.diff
 BuildRequires:	kernel-source
 BuildRequires:	libtool
 BuildRequires:	autoconf2.5
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Arrayprobe is a linux commandline utility that reports the status of a HP
