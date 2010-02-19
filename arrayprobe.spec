@@ -9,7 +9,6 @@ Source0:	http://www.strocamp.net/opensource/compaq/downloads/%{name}-%{version}.
 Patch0:		arrayprobe_2.0-2.diff
 BuildRequires:	kernel-source
 BuildRequires:	libtool
-BuildRequires:	autoconf2.5
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -23,14 +22,12 @@ controller and any events in the event queue.
 %prep
 
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %build
-rm -rf autom4te.cache configure
-libtoolize --force --copy; aclocal; autoheader; automake --add-missing --copy --foreign; autoconf
-
+autoreconf -fi
 %configure2_5x \
-    --with-kernel=`ls -d /usr/src/2.6.*`
+    --with-kernel=`ls -d /usr/src/linux`
 
 %make
 
@@ -40,7 +37,7 @@ rm -rf %{buildroot}
 install -d %{buildroot}%{_sysconfdir}/cron.daily
 install -d %{buildroot}%{_mandir}/man1
 
-%makeinstall
+%makeinstall_std
 
 install -m0644 debian/%{name}.cron.daily %{buildroot}%{_sysconfdir}/cron.daily/%{name}
 install -m0644 debian/%{name}.1 %{buildroot}%{_mandir}/man1/
