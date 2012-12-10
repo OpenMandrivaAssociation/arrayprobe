@@ -1,15 +1,14 @@
 Summary:	A command line HP (Compaq) SmartArray status checker
 Name:		arrayprobe
 Version:	2.0
-Release:	%mkrel 5
+Release:	%mkrel 4
 License:	GPL
 Group:		System/Kernel and hardware
 URL:		http://www.strocamp.net/opensource/
 Source0:	http://www.strocamp.net/opensource/compaq/downloads/%{name}-%{version}.tar.bz2
 Patch0:		arrayprobe_2.0-2.diff
-BuildRequires:	kernel-source
+BuildRequires:	kernel-source-latest
 BuildRequires:	libtool
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Arrayprobe is a linux commandline utility that reports the status of a HP
@@ -42,11 +41,7 @@ install -d %{buildroot}%{_mandir}/man1
 install -m0644 debian/%{name}.cron.daily %{buildroot}%{_sysconfdir}/cron.daily/%{name}
 install -m0644 debian/%{name}.1 %{buildroot}%{_mandir}/man1/
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog NEWS README
 %attr(0644,root,root) %{_sysconfdir}/cron.daily/%{name}
 %attr(0755,root,root) %{_bindir}/%{name}
