@@ -4,7 +4,7 @@ Version:	2.0
 Release:	%mkrel 4
 License:	GPL
 Group:		System/Kernel and hardware
-URL:		http://www.strocamp.net/opensource/
+URL:		https://www.strocamp.net/opensource/
 Source0:	http://www.strocamp.net/opensource/compaq/downloads/%{name}-%{version}.tar.bz2
 Patch0:		arrayprobe_2.0-2.diff
 BuildRequires:	kernel-source-latest
