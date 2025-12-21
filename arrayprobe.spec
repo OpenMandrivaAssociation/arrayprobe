@@ -7,6 +7,11 @@ Group:		System/Kernel and hardware
 URL:		https://www.strocamp.net/opensource/
 Source0:	http://www.strocamp.net/opensource/compaq/downloads/%{name}-%{version}.tar.bz2
 Patch0:		arrayprobe_2.0-2.diff
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	kernel-source-latest
 BuildRequires:	libtool
 
